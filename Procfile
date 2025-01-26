@@ -1,1 +1,1 @@
-web: node server.js
+web: npc serve dist
