@@ -1,0 +1,317 @@
+/* Modern CSS for Increment-Decrement Component */
+
+
+.increment-decr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.counter {
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.addButton {
+  background: linear-gradient(45deg, #00b09b, #96c93d);
+  color: #fff;
+}
+
+.addButton:hover {
+  background: linear-gradient(45deg, #96c93d, #00b09b);
+  transform: translateY(-2px);
+}
+
+.decButton {
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: #fff;
+}
+
+.decButton:hover {
+  background: linear-gradient(45deg, #dd2476, #ff512f);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Basic reset and layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.movie-container {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for movie cards */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Movie card styling */
+.movie-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+@media (max-width: 900px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.movieInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #e0d7d7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.movieInput:hover {
+  transform: translateY(-5px);
+}
+
+.movieInput input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fbfbfb;
+  color: #fff;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.movieInput input[type="text"] {
+  background-color: #bebebe;
+}
+
+.movieInput input[type="submit"] {
+  background-color: #ff4c60;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.movieInput input[type="submit"]:hover {
+  background-color: #ff2f40;
+  transform: scale(1.05);
+}
+
+.movieInput input:focus {
+  background-color: #444;
+  transform: scale(1.02);
+}
+
+/* Container styles */
+.todo-cont {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+.todo-cont input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #dce1e8;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.todo-cont input[type="text"]:focus {
+  border-color: #4a90e2;
+}
+
+/* Todo item container */
+.todo-cont div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e6ee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.todo-cont input[type="checkbox"] {
+  margin-right: 12px;
+  cursor: pointer;
+  transform: scale(1.2);
+  accent-color: #4caf50; 
+}
+
+.todo-cont p {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  word-break: break-word;
+}
+
+.todo-cont p.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-cont .delete-Btn {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.todo-cont .delete-Btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.todo-cont .delete-Btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .todo-cont {
+    padding: 16px;
+  }
+
+  .todo-cont div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-cont input[type="checkbox"] {
+    margin-bottom: 8px;
+  }
+
+  .todo-cont .delete-Btn {
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}
+
+.edit-Btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 10px;
+}
+
+.edit-Btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05); 
+}
+
+.edit-Btn:focus {
+  outline: none; 
+}
+
+
+
+
