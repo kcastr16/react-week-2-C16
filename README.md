@@ -10,6 +10,8 @@ Use the Decrementer button to descrease the amount by one
 Instructions on how to use the movie search: 
 In the search bar, type a movie that you would like to search for. It will display movies based on what you search for.
 ![alt text](image-1.png)
+Hover over the movie, and it will prompt you to click the movie of your choice. It will take you to a page with movie details!
+![alt text](image-3.png)
 Instructions on how to use the To-do List:
 Use the input to add a task. IE: Learn React at 2pm, Eat water, Bake cookies Friday. 
 Press your enter key and it will add it to your screen. 
