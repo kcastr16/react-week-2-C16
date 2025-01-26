@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import Movie from './pages/Movie';
 import Todo from './pages/Todo';
+import MovieData from './pages/MovieDetails';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/movie' element={<Movie />} />
           <Route path='/todo' element={<Todo />} />
+          <Route path='/moviedata' element={<MovieData/>} />
         </Routes>
       </div>
 

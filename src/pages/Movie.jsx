@@ -1,5 +1,7 @@
 import axios, {isCancel, AxiosError} from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; 
+
 
 
 function Movie() {
@@ -61,10 +63,15 @@ function Movie() {
             {movieData && movieData.length > 0 ? (
                 <div className="movies-grid">
                     {movieData.map((movie, index) => (
+                         <Link to={`/moviedata?id=${movie.id}`} key={index}>
                         <div className="movie-card" key={index}>
                             <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                             <p className="movie-title">{movie.title}</p>
+                        <div className="movie-details-overlay">
+                            <p>Click to view more</p>
                         </div>
+                    </div>
+                        </Link>
                     ))}
                 </div>
             ) : (

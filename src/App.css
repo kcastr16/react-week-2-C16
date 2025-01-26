@@ -74,68 +74,69 @@ body {
 
 .movie-container {
   padding: 20px;
-  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Grid layout for movie cards */
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   gap: 20px;
   justify-items: center;
-}
+ }
+ 
 
-/* Movie card styling */
 .movie-card {
-  background-color: #fff;
-  border-radius: 8px;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  max-width: 220px; 
+  margin: 0 auto;
+}
+
+.movie-card img {
   width: 100%;
-  max-width: 200px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  z-index: 1; 
+}
+
+.movie-card .movie-details-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2; 
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.movie-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+.movie-card:hover img {
+  filter: blur(5px); 
 }
 
-.movie-poster {
-  width: 100%;
-  height: auto;
-  border-bottom: 2px solid #f4f4f4;
+.movie-card:hover .movie-details-overlay {
+  opacity: 1; 
+}
+
+.movie-card:hover img {
+  transform: scale(1.1); 
 }
 
 .movie-title {
   font-size: 1.1rem;
-  font-weight: bold;
-  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
   color: #333;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  max-width: 180px;
 }
 
-@media (max-width: 900px) {
-  .movies-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .movies-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .movieInput {
   display: flex;
@@ -271,25 +272,6 @@ h1 {
   transform: translateY(0);
 }
 
-@media (max-width: 600px) {
-  .todo-cont {
-    padding: 16px;
-  }
-
-  .todo-cont div {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .todo-cont input[type="checkbox"] {
-    margin-bottom: 8px;
-  }
-
-  .todo-cont .delete-Btn {
-    margin-top: 8px;
-    align-self: flex-end;
-  }
-}
 
 .edit-Btn {
   padding: 8px 12px;
@@ -312,6 +294,56 @@ h1 {
   outline: none; 
 }
 
+.movie-details-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  gap: 40px;
+}
 
+.movie-details-txt {
+  flex: 1;
+  max-width: 600px;
+}
 
+.movie-details-txt h1 {
+  font-size: 2.4rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.movie-details-txt p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+
+.movie-details-txt p:last-child {
+  margin-bottom: 0;
+}
+
+.movie-details-poster {
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Ensure proper spacing */
+.movie-details-cont {
+  gap: 40px;
+  padding: 40px;
+}
 
